@@ -1,0 +1,88 @@
+{
+  "data": {
+    "user": [
+      {
+        "surname": "jani",
+        "forename": "jani",
+        "felhasznalonev": "jani",
+        "password": "$2a$10$jQ7.U6dtc7pYcGq6l5274.3sARbwcyiwOMhcYk2HUaPZImrOLPGiC",
+        "avatar": "",
+        "role": "tag",
+        "createdAt": "2015-11-08T09:31:11.383Z",
+        "updatedAt": "2015-11-08T09:31:11.383Z",
+        "id": 1
+      },
+      {
+        "surname": "j",
+        "forename": "j",
+        "felhasznalonev": "j",
+        "password": "$2a$10$lMN33c5JsciXf8blQCfNjuf6EV3/dykmZb3qKn2UsubdPq7J9IA9u",
+        "role": "tag",
+        "createdAt": "2015-11-08T11:26:23.448Z",
+        "updatedAt": "2015-11-08T11:26:23.448Z",
+        "id": 2
+      },
+      {
+        "vezeteknev": "bALOG",
+        "keresztnev": "JÁNOS",
+        "felhasznev": "janika",
+        "jelszo": "$2a$12$seSaZcLJp3Htm3TuQ0oGKeMc7aPS0eYdeweVxSWtzPTpO3E8o.bkC",
+        "createdAt": "2015-11-08T15:12:45.950Z",
+        "updatedAt": "2015-11-08T15:12:45.950Z",
+        "id": 3
+      },
+      {
+        "vezeteknev": "asd",
+        "keresztnev": "a",
+        "felhasznev": "s",
+        "jelszo": "$2a$12$4M/rwFI5dqzcJk/.Pd75ruYNo.Ho2MIeZxGnKdeSnOQyRDnID4JDK",
+        "createdAt": "2015-11-08T15:51:57.995Z",
+        "updatedAt": "2015-11-08T15:51:57.995Z",
+        "id": 4
+      },
+      {
+        "vezeteknev": "Jani",
+        "keresztnev": "Buzi",
+        "felhasznev": "janibuzi",
+        "jelszo": "$2a$12$lmNV6eI5FUhHlFlk0mhuWO6j/NCHdWIB4n7DLNQ8QUceOeTAC9rIS",
+        "createdAt": "2015-11-08T19:41:47.154Z",
+        "updatedAt": "2015-11-08T19:41:47.154Z",
+        "id": 5
+      }
+    ]
+  },
+  "schema": {
+    "user": {
+      "keresztnev": {
+        "type": "string"
+      },
+      "vezeteknev": {
+        "type": "string"
+      },
+      "felhasznev": {
+        "type": "string",
+        "unique": true
+      },
+      "jelszo": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 5
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="page-header"><h1>Recept szerkesztése</h1></div>
+
+<form class="form-horizontal" method="post">
+    <fieldset>
+        <div class="form-group
+            {{#if validationRecipes.nev}}
+                has-error
+            {{/if}}
+        ">
+            <label for="nev" class="col-lg-2 control-label">Étel neve</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="nev" name="nev" placeholder="Gulyásleves, Spagetti.." type="text" value="{{nev}}">
+                {{#if validationRecipes.nev}}
+                    <span class="help-block">{{validationRecipes.nev.msg}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <div class="form-group
+            {{#if validationRecipes.elkeszites}}
+                has-error
+            {{/if}}
+        ">
+            <label for="elkeszites" class="col-lg-2 control-label">Elkészítés</label>
+            <div class="col-lg-8">
+                <textarea class="form-control" rows="3" id="elkeszites" name="elkeszites" placeholder="Hozzávalók, elkészítése lépésről lépésre, várható elkészülési idő...">{{elkeszites}}</textarea>
+                {{#if validationRecipes.elkeszites}}
+                    <span class="help-block">{{validationRecipes.elkeszites.msg}}</span>
+                {{/if}}
+            </div>
+            
+            <label for="allapotok" style=padding-top:25px class="col-lg-2 control-label">Állapot</label>
+            <div class="col-lg-8 row-fluid" style="padding-top:1px;">
+                <input type="radio" name="allapot" value="elfogadott" checked>Elfogadott
+                <input type="radio" name="allapot" value="uj">Új
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary">Beküld</button>
+                <button type="reset" class="btn btn-default">Változtatások visszavonása</button>
+            </div>
+        </div>
+    </fieldset>
+</form>        
