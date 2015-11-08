@@ -27,8 +27,8 @@ describe('UserModel', function () {
 
     function getUserData() {
         return {
-            felhasznev: 'jj',
-            jelszo: 'j',
+            felhasznev: 'abcdef',
+            jelszo: 'jelszo',
             vezeteknev: 'Gipsz',
             keresztnev: 'Jakab',
         };
@@ -42,16 +42,16 @@ describe('UserModel', function () {
     
     it('should be able to create a user', function () {
         return User.create({
-                felhasznev: 'jj',
-                jelszo: 'j',
+                felhasznev: 'abcdef',
+                jelszo: 'jelszo',
                 vezeteknev: 'Gipsz',
                 keresztnev: 'Jakab',
         })
         .then(function (user) {
-            expect(user.felhasznev).to.equal('jj');
-            expect(bcrypt.compareSync('j', user.jelszo)).to.be.true;
-            expect(user.surname).to.equal('Gipsz');
-            expect(user.forename).to.equal('Jakab');
+            expect(user.felhasznev).to.equal('abcdef');
+            expect(bcrypt.compareSync('jelszo', user.jelszo)).to.be.true;
+            expect(user.vezeteknev).to.equal('Gipsz');
+            expect(user.keresztnev).to.equal('Jakab');
         });
     });
 
@@ -61,17 +61,18 @@ describe('UserModel', function () {
             return User.findOneByNeptun(user.neptun);
         })*/
         .then(function (user) {
-            expect(user.felhasznev).to.equal('jj');
-            expect(bcrypt.compareSync('j', user.jelszo)).to.be.true;
+            expect(user.felhasznev).to.equal('abcdef');
+            expect(bcrypt.compareSync('jelszo', user.jelszo)).to.be.true;
             expect(user.vezeteknev).to.equal('Gipsz');
             expect(user.keresztnev).to.equal('Jakab');
+            //expect(user.avatar).to.equal('');
         });
     });
 
     describe('#validPassword', function() {
         it('should return true with right password', function() {
              return User.create(getUserData()).then(function(user) {
-                 expect(user.validPassword('j')).to.be.true;
+                 expect(user.validPassword('jelszo')).to.be.true;
              })
         });
         it('should return false with wrong password', function() {

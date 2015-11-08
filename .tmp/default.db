@@ -48,6 +48,15 @@
         "createdAt": "2015-11-08T19:41:47.154Z",
         "updatedAt": "2015-11-08T19:41:47.154Z",
         "id": 5
+      },
+      {
+        "vezeteknev": "gfg",
+        "keresztnev": "fg",
+        "felhasznev": "admin",
+        "jelszo": "$2a$12$LgL7eI6YTvxcbBlxlhZ3ROi3w4iqrcCpeInS32EgS8BkCnjyGFHTe",
+        "createdAt": "2015-11-08T21:39:12.230Z",
+        "updatedAt": "2015-11-08T21:39:12.230Z",
+        "id": 6
       }
     ]
   },
@@ -82,7 +91,7 @@
   },
   "counters": {
     "user": {
-      "id": 5
+      "id": 6
     }
   }
 }

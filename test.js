@@ -14,7 +14,7 @@ describe('User visits index page', function() {
     });
     
     it('should see welcome page', function() {
-        browser.assert.text('.navbar-header a', 'Legreceptebb receptek');
+        browser.assert.text('.navbar-header a', 'Frankó receptek');
     });
 });
 
@@ -23,7 +23,7 @@ describe('User tries to access receptek', function (argument) {
     var browser = new Browser();
     
     before(function() {
-        return browser.visit('/receptek/list');
+        return browser.visit('/recipes/list');
     });
     
     it('should go to the authentication page', function () {
@@ -34,13 +34,13 @@ describe('User tries to access receptek', function (argument) {
     
     it('should be able to login with correct credentials', function (done) {
         browser
-            .fill('username', 'admin')
-            .fill('password', 'asdasd')
+            .fill('felhasznev', 'admin')
+            .fill('jelszo', 'asdasd')
             .pressButton('button[type=submit]')
             .then(function () {
                 browser.assert.redirected();
                 browser.assert.success();
-                browser.assert.url({ pathname: '/receptek/list' });
+                browser.assert.url({ pathname: '/recipes/list' });
                 done();
             });
     });
